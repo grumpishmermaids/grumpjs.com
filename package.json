@@ -21,9 +21,11 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "bower": "^1.5.3",
     "chai": "^3.3.0",
     "jshint-stylish": "^0.2.0",
     "karma": "^0.13.10",
+    "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.4",
     "karma-cli": "0.0.4",
     "karma-jasmine": "^0.1.5",
@@ -31,9 +33,11 @@
     "karma-nested-reporter": "^0.1.1",
     "karma-nyan-reporter": "0.0.43",
     "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon": "^1.0.4",
     "karma-unicorn-reporter": "^0.1.4",
     "mocha": "^1.20.1",
-    "supertest": "^1.1.0",
-    "request": "^2.64.0"
+    "request": "^2.64.0",
+    "sinon": "^1.17.1",
+    "supertest": "^1.1.0"
   }
 }
