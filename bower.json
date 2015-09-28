@@ -1,0 +1,22 @@
+{
+  "name": "grumpjs.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/grumpishmermaids/grumpjs.com",
+  "authors": [
+    "hdh3000 <henry.hutcheson@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "specs",
+    "spec"
+  ],
+
+   "dependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "angular-mocks": "*"
+  }
+}

@@ -21,19 +21,30 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "bower": "^1.5.3",
     "chai": "^3.3.0",
+    "grunt": "^0.4.5",
+    "grunt-mocha": "^0.4.13",
     "jshint-stylish": "^0.2.0",
     "karma": "^0.13.10",
+    "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.4",
     "karma-cli": "0.0.4",
     "karma-jasmine": "^0.1.5",
     "karma-mocha": "^0.1.4",
+    "karma-mocha-reporter": "^1.1.1",
     "karma-nested-reporter": "^0.1.1",
     "karma-nyan-reporter": "0.0.43",
     "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon": "^1.0.4",
+    "karma-sinon-chai": "^1.1.0",
     "karma-unicorn-reporter": "^0.1.4",
     "mocha": "^1.20.1",
+    "request": "^2.64.0",
+    "sinon": "^1.17.1",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0",
     "supertest": "^1.1.0",
-    "request": "^2.64.0"
+    "when": "^3.7.3"
   }
 }

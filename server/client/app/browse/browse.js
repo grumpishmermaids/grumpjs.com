@@ -2,16 +2,13 @@ angular.module('grump.browse', [])
 
 .controller('BrowseController', function ($scope, Files) {
   $scope.grumps = [];
-  console.log("Frumps!", $scope.grumps);
 
   $scope.getGrumps = function(){
-    Files.getGrumps().then(function (results) {
-      console.log("DATA!",results.data);
+    return Files.getGrumps().then(function (results) {
       $scope.grumps = results.data;
-      console.log("Frumps!", $scope.grumps);
+      
+      //returning scope.grumps for testing...
+      return $scope.grumps;
     });
   };
-
-  $scope.getGrumps();
-
 });

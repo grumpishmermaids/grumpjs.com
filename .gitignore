@@ -12,6 +12,7 @@ lib-cov
 
 #config file
 config.json
+bower_components
 
 # Coverage directory used by tools like istanbul
 coverage
