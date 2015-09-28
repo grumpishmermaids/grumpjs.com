@@ -1,0 +1,12 @@
+{
+  "github": {
+    "key": "CHANGE_ME",
+    "secret": "CHANGE_ME"
+  },
+  "mongo": {
+    "username": "grump",
+    "password": "grump",
+    "host": "localhost",
+    "db": "grump"
+  }
+}
