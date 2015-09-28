@@ -1,4 +1,4 @@
-describe('UploadController', function () {
+describe('BrowseController', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Files, $q;
 
   // using angular mocks, we can inject the injector
@@ -19,7 +19,7 @@ describe('UploadController', function () {
 
     // used to create our UpploadController for testing
     createController = function () {
-      return $controller('UploadController', {
+      return $controller('BrowseController', {
         $scope: $scope,
         $window: $window,
         $location: $location,
@@ -27,44 +27,39 @@ describe('UploadController', function () {
       });
     };
     createController();
-    // sinon.spy(Files, 'submitGrump');
-
-    //stub for testing submitGrumps functionailty
-    sinon.stub(Files, "submitGrump", function(obj) {
+    //stub for testing getGrumps functionailty
+    sinon.stub(Files, "getGrumps", function() {
       return $q(function(resolve, reject){
-        if(true) { resolve(obj); } 
+        if(true) { resolve({data:["kittens"]}); } 
         else { reject(); }
       });
     });
-
   }));
 
   afterEach(function () {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
-    Files.submitGrump.restore();
+    Files.getGrumps.restore();
   });
 
-  describe('On form submission', function() {
+  describe('getGrumps Method', function() {
 
-    it('should have a submitForm method', function () {
-      expect($scope.submitForm).to.be.a('function');
+    it('should have a getGrumps method', function () {
+      expect($scope.getGrumps).to.be.a('function');
     });
 
-    it('which should call the submitGrump method', function() {
-      $scope.submitForm();
-      expect(Files.submitGrump).to.have.been.calledOnce;
+    it('which should call the Files.getGrumps method', function() {
+      // $httpBackend.when('GET', 'api/lib').respond();
+      $scope.getGrumps();
+      // $httpBackend.flush();
+      expect(Files.getGrumps).to.have.been.calledOnce;
     });
 
-    it('and should pass the submitGrump method a grumpObject', function() {
-      var userObj = {  
-        repo : 'someRepo',
-        runFile : 'someRunFile',
-        command : 'someCommand'
-      };
-
-      $scope.submitForm(userObj);
-      expect(Files.submitGrump).to.have.been.calledWith(userObj);
+    it('and should set $scope.grumps to the response from getGrumps', function() {
+      $scope.getGrumps().then(function(result){
+        expect(result).to.eql(["kittens"]);
+      });
     });
   });
 });
+

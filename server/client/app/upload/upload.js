@@ -10,7 +10,7 @@ angular.module('grump.upload', [])
   $scope.submitForm = function(obj) {
     Files.submitGrump(obj)
       .then(function(result){
-        console.log(result);
+        //do something with the results...
       });
   };
 
