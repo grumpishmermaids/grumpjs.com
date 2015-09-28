@@ -10,21 +10,20 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai', 'sinon'],
 
 
     // list of files / patterns to load in the browser
     files: [
       // angular source
-      'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js',
-      'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js',
-      'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-mocks.js',
+      'server/client/assets/bower_components/angular/angular.js',
+      'server/client/assets/bower_components/angular-route/angular-route.js',
+      'server/client/assets/bower_components/angular-mocks/angular-mocks.js',
 
       // our app code
       'server/client/app/**/*.js',
 
       // our spec files
-      'node_modules/expect.js/index.js',
       'specs/client/**/*.js'
     ],
 
@@ -45,9 +44,8 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['nyan','unicorn'],
-
-
+    reporters:['dots'],
+    
     // web server port
     port: 9876,
 
@@ -67,7 +65,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
