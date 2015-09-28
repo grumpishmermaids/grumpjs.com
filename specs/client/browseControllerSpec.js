@@ -1,3 +1,6 @@
+/* jshint -W024 */
+/* jshint expr:true */
+
 describe('BrowseController', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Files, $q;
 

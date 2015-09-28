@@ -1,3 +1,6 @@
+/* jshint -W024 */
+/* jshint expr:true */
+
 describe('UploadController', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Files, $q;
 
@@ -66,5 +69,17 @@ describe('UploadController', function () {
       $scope.submitForm(userObj);
       expect(Files.submitGrump).to.have.been.calledWith(userObj);
     });
+
+    xit('the submitGrump method should not accept an object with any empty keys', function() {
+      var userObj = {  
+        repo : '',
+        runFile : '',
+        command : ''
+      };
+
+      //to write....
+    });
+
+
   });
 });

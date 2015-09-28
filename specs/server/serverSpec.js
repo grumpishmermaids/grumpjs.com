@@ -92,7 +92,7 @@ describe('', function() {
         .end(function (err, res) {
           if (err) return done(err);
           done();
-        });
+      });
     });
   });
 });
