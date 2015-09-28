@@ -1,7 +1,7 @@
 {
   "github": {
-    "key": "61c332d3744979e21dfc",
-    "secret": "aa087965d1d85297b1110a9a2104c08decd3957a"
+    "key": "CHANGE_ME",
+    "secret": "CHANGE_ME"
   },
   "mongo": {
     "username": "grump",

@@ -1,7 +1,6 @@
 var expect   = require('chai').expect;
 var assert   = require('chai').assert;
 var request  = require('supertest');
-var config   = require('../../server/config.json');
 var mongoose = require('mongoose');
 var GitHubApi = require('github');
 describe('', function() {
@@ -17,14 +16,12 @@ describe('', function() {
 
   describe('Configuration file should be populated', function() {
 
-    it('should have Github config values filled out', function() {
-      expect(config.github.key).to.not.equal("");
-      expect(config.github.secret).to.not.equal("");
+    it('should have Github config values as env variables', function() {
+      expect(process.env.GRUMP_GITHUB_API_SECRET).to.not.equal(undefined);
     });
 
-    it('should have Mongo config values filled out', function() {
-      expect(config.mongo.username).to.not.equal("");
-      expect(config.mongo.password).to.not.equal("");
+    it('should have Mongo config values as env variables', function() {
+      expect(process.env.GRUMP_MONGO).to.not.equal(undefined);
     });
 
     it('should have valid Github credentials', function(done) {
@@ -40,9 +37,9 @@ describe('', function() {
       });
 
       github.authenticate({
-          type: "oauth",
-          key: config.github.key,
-          secret: config.github.secret
+        type: "oauth",
+        key: "61c332d3744979e21dfc",
+        secret: process.env.GRUMP_GITHUB_API_SECRET
       });
 
       github.repos.get({
@@ -58,7 +55,7 @@ describe('', function() {
     });
 
     it('should have valid Mongo credentials', function(done) {
-      mongoose.connect("mongodb://" + config.mongo.username + ":" + config.mongo.password + "@" + config.mongo.host + "/" + config.mongo.db);
+      mongoose.connect(process.env.GRUMP_MONGO);
       mongoose.connection.on("connected", function(ref) {
         expect(ref).to.not.equal("");
         done();
