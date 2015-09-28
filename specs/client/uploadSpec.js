@@ -1,7 +1,5 @@
-// note becuase this is run through karma-- the dependencies are loaded through karma config. 
-
 describe('UploadController', function () {
-  var $scope, $rootScope, $location, $window, $httpBackend, createController, Auth;
+  var $scope, $rootScope, $location, $window, $httpBackend, createController, Files;
 
   // using angular mocks, we can inject the injector
   // to retrieve our dependencies
@@ -18,7 +16,7 @@ describe('UploadController', function () {
 
     var $controller = $injector.get('$controller');
 
-    // used to create our AuthController for testing
+    // used to create our UpploadController for testing
     createController = function () {
       return $controller('UploadController', {
         $scope: $scope,
@@ -28,17 +26,41 @@ describe('UploadController', function () {
       });
     };
     createController();
+    sinon.spy(Files, 'submitGrump');
   }));
 
   afterEach(function () {
     $httpBackend.verifyNoOutstandingExpectation();
     $httpBackend.verifyNoOutstandingRequest();
+    Files.submitGrump.restore();
   });
 
-  describe('Form Submission', function() {
-    it('should have a submimt form methhod', function () {
+  describe('On form submission', function() {
+
+    it('should have a submit form method', function () {
       expect($scope.submitForm).to.be.a('function');
     });
+
+    it('should call the submitGrump method', function() {
+      $httpBackend.when('POST', 'api/submit').respond();
+      $scope.submitForm();
+      $httpBackend.flush();
+      expect(Files.submitGrump).to.have.been.calledOnce;
+    });
+
+    it('should pass the submitGrump method a grumpObject', function() {
+      var userObj = {  
+        repo : 'someRepo',
+        runFile : 'someRunFile',
+        command : 'someCommand'
+      };
+
+      $httpBackend.when('POST', 'api/submit').respond();
+      $scope.submitForm(userObj);
+      $httpBackend.flush();
+      expect(Files.submitGrump).to.have.been.calledWith(userObj);
+    });
+    
   });
 
 });

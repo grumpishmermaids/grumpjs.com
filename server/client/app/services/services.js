@@ -2,7 +2,7 @@ angular.module('grump.services', [])
 
 .factory('Files', function ($http) {
   // Your code here
-  var submitFile = function (obj) {
+  var submitGrump = function (obj) {
     console.log('OBJECT:', obj);
     return $http({
       method: 'POST',
@@ -23,7 +23,7 @@ angular.module('grump.services', [])
   };
 
   return {
-    submitFile : submitFile,
+    submitGrump : submitGrump,
     getGrumps  : getGrumps
   };
 
