@@ -26,4 +26,19 @@ angular.module('grump.services', [])
     getGrumps  : getGrumps
   };
 
+})
+.factory('Auth', function ($http) {
+  var initiateSignin = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/auth/signin'
+    }).then(function(resp){
+      return resp;
+    });
+  };
+  
+  return {
+    initiateSignin : initiateSignin
+  };
+
 });
