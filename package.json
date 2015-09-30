@@ -5,7 +5,7 @@
   "scripts": {
     "start": "DEBUG=grump:* nodemon ./server/bin/www",
     "test": "grunt test",
-    "testserver": "DEBUG=grump:* node ./server/bin/www & sleep 1; ./node_modules/.bin/mocha -R nyan specs/server/serverSpec.js; pkill -n node;"
+    "testserver": "DEBUG=grump:* node ./server/bin/www & sleep 1; ./node_modules/.bin/mocha -R nyan specs/server/*.js; pkill -n node;"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -18,7 +18,7 @@
     "mongodb": "^2.0.43",
     "mongoose": "^4.1.8",
     "morgan": "~1.6.1",
-    "request": "^2.63.0",
+    "request": "^2.64.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
@@ -28,6 +28,7 @@
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-karma": "^0.12.1",
     "grunt-mocha": "^0.4.13",
+    "grunt-mocha-test": "^0.12.7",
     "grunt-shell": "^1.1.2",
     "jshint-stylish": "^0.2.0",
     "karma": "^0.13.10",
