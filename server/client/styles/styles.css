@@ -54,6 +54,28 @@ table {
   width:200px;
 }
 
+.grumpDetail {
+  display:block;
+}
+
+.grump {
+  display: inline-block;
+  background-color: gray;
+  padding: 5px;
+  margin: 5px; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+fieldset {
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 input {
   display: inline-block;
@@ -65,3 +87,4 @@ button {
   margin: 50px;
   float: auto;
 }
+
