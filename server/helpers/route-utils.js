@@ -1,5 +1,5 @@
 var GitHubApi = require('github');
-var request   = require('request');
+var config    = require('../config.json');
 
 var github = new GitHubApi({
     version: "3.0.0",
@@ -12,12 +12,11 @@ var github = new GitHubApi({
     }
 });
 
-  console.log(process.env.GRUMP_GITHUB_API_SECRET);
-  github.authenticate({
-      type: "oauth",
-      key: "61c332d3744979e21dfc",
-      secret: process.env.GRUMP_GITHUB_API_SECRET
-  });
+github.authenticate({
+    type: "oauth",
+    key: "61c332d3744979e21dfc",
+    secret: process.env.GRUMP_GITHUB_API_SECRET
+});
 
 var gitGet = function(repo, callback) {
   var info = {};
@@ -57,38 +56,4 @@ var gitGet = function(repo, callback) {
   });
 };
 
-
-gitGetUser = function(token, callback) {
-  var options = {
-    url: "https://api.github.com/user?access_token="+token,
-    headers: {
-      'User-Agent': 'Grump'
-    }
-
-  };
-
-  request.get(options, function(err, res){
-    callback(JSON.parse(res.body));
-  });
-
-};
-
-
-
 exports.gitGet = gitGet;
-exports.gitGetUser = gitGetUser;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
