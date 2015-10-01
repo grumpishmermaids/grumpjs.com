@@ -17,6 +17,7 @@
     "jade": "~1.11.0",
     "mongodb": "^2.0.43",
     "mongoose": "^4.1.8",
+    "mongoose-ttl": "0.0.3",
     "morgan": "~1.6.1",
     "request": "^2.64.0",
     "serve-favicon": "~2.3.0"
