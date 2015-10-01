@@ -25,7 +25,7 @@ var gitGet = function(repo, callback) {
     user: repo[0],
     repo: repo[1],
   }, function(err, res) {
-    if (err) console.log(err);
+    if (err) console.log('Error calling github in gitGet',err);
     info.githubID = res.id;
     info.repoName = res.name;
     info.description = res.description;
