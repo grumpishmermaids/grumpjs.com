@@ -15,20 +15,16 @@ angular.module('grump.myGrumps', [])
   $scope.updateGrump = function (grumpID) {
     return MyGrumps.updateGrump(grumpID).then(function (results) {
       console.log("Grump Updated");
+      //update the field
       $scope.getMyGrumps();
-
-      //returning scope.grumps for testing...
-      return $scope.grumps;
     });
   };
 
   $scope.deleteGrump = function (grumpID) {
     return MyGrumps.deleteGrump(grumpID).then(function (results) {
       console.log("Grump Deleted");
+      //update the field
       $scope.getMyGrumps();
-      
-      //returning scope.grumps for testing...
-      return $scope.grumps;
     });
   };
 
