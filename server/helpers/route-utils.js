@@ -1,5 +1,4 @@
 var GitHubApi = require('github');
-var config    = require('../config.json');
 
 var github = new GitHubApi({
     version: "3.0.0",
