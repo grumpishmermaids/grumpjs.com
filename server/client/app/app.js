@@ -14,6 +14,10 @@ angular.module('grump', [
       templateUrl: 'app/upload/upload.html',
       controller: 'UploadController'
     })
+    .when('/login', {
+      templateUrl: 'app/login/login.html',
+      controller: 'LoginController'
+    })
     .otherwise({
         redirectTo : '/browse'
     });
