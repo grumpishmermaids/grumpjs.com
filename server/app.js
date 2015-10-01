@@ -9,7 +9,6 @@ var library = require('./routes/library');
 var myGrumps = require('./routes/mygrumps');
 var auth = require('./routes/auth');
 var submit  = require('./routes/submit');
-var checkAuth = require('./middleware/auth');
 
 
 var app = express();

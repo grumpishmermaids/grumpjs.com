@@ -12,6 +12,7 @@ var github = new GitHubApi({
     }
 });
 
+  console.log(process.env.GRUMP_GITHUB_API_SECRET);
   github.authenticate({
       type: "oauth",
       key: "61c332d3744979e21dfc",
