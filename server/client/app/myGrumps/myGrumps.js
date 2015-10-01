@@ -15,6 +15,7 @@ angular.module('grump.myGrumps', [])
   $scope.updateGrump = function (grumpID) {
     return MyGrumps.updateGrump(grumpID).then(function (results) {
       console.log("Grump Updated");
+      $scope.getMyGrumps();
 
       //returning scope.grumps for testing...
       return $scope.grumps;
@@ -24,6 +25,7 @@ angular.module('grump.myGrumps', [])
   $scope.deleteGrump = function (grumpID) {
     return MyGrumps.deleteGrump(grumpID).then(function (results) {
       console.log("Grump Deleted");
+      $scope.getMyGrumps();
       
       //returning scope.grumps for testing...
       return $scope.grumps;
