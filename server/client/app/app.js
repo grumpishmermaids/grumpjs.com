@@ -2,6 +2,7 @@ angular.module('grump', [
   'grump.services',
   'grump.upload',
   'grump.browse',
+  'grump.myGrumps',
   'grump.auth',
   'grump.token',
   'ngRoute'
@@ -24,12 +25,13 @@ angular.module('grump', [
       template: '',
       controller: "TokenController"
     })
+    .when('/mygrumps', {
+      templateUrl: 'app/myGrumps/myGrumps.html',
+      controller: "MyGrumpsController"
+    })
     .otherwise({
         redirectTo : '/browse'
     });
-})
-.run();
 
-
-
-    
+  // $httpProvider.interceptors.push('AttachTokens');
+}).run();
