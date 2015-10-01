@@ -9,12 +9,19 @@
   
   <body>
     <h1>Grump</h1>
-      <div class='navigation'>
-        <ul>
-          <li><a href='#/browse' class='link'>Browse</a></li>
-          <li><a href='#/upload' class='link'>Upload</a></li>
-        </ul>
-      </div>
+    <nav class="navigation">
+      <ul>
+        <li>
+          <a href='#/browse' class='link'>Browse</a>
+        </li>
+        <li>
+          <a href='#/upload' class='link'>Upload</a>
+        </li>
+        <li>
+          <a href='#/login' class='link'>Login</a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
