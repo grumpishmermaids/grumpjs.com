@@ -1,7 +1,7 @@
 var expect   = require('chai').expect;
 var assert   = require('chai').assert;
 var request  = require('supertest');
-var config   = require('../../server/config.json');
+// var config   = require('../../server/config.json');
 var mongoose = require('mongoose');
 
 describe('Adding Data To Mongo', function(){

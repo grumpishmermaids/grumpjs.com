@@ -1,7 +1,7 @@
 /* jshint -W024 */
 /* jshint expr:true */
 
-describe('servicesFactory', function () {
+describe('filesFactory', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Files, $q;
 
   // using angular mocks, we can inject the injector

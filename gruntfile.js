@@ -20,7 +20,16 @@ module.exports = function(grunt) {
     
     shell: {
       servertest:{
-        command: 'DEBUG=grump:* node ./server/bin/www & sleep 1; ./node_modules/.bin/mocha -R spec specs/server/serverSpec.js; pkill -n node;'
+        command: 'DEBUG=grump:* node ./server/bin/www & sleep 1; ./node_modules/.bin/mocha -R spec specs/server/*.js; pkill -n node;'
+      }
+    },
+
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+        },
+        src: ['specs/server/*.js']
       }
     },
 
@@ -34,6 +43,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-mocha-test');
   
   grunt.registerTask('test', ['jshint','shell:servertest','karma']);
 

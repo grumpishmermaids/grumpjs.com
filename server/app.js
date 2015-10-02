@@ -6,10 +6,12 @@ var bodyParser   = require('body-parser');
 
 var index   = require('./routes/index');
 var library = require('./routes/library');
+var myGrumps = require('./routes/mygrumps');
+var auth = require('./routes/auth');
 var submit  = require('./routes/submit');
 
-var app = express();
 
+var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -19,7 +21,9 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', index);
 app.use('/api/lib', library);
+app.use('/api/mygrumps', myGrumps);
 app.use('/api/submit', submit);
+app.use('/api/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
