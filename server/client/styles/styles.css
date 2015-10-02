@@ -22,6 +22,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  color: #282828;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -30,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background-color: #fbf1c7;
 }
 ol, ul {
   list-style: none;
@@ -52,7 +54,7 @@ table {
 .navigation {
   width: 100%;
   height: 40px;
-  background-color: #eee;
+  background-color: #d5c4a1;
 }
 
 .navigation ul {
@@ -75,7 +77,11 @@ table {
 }
 
 .navigation li a:hover {
-  background-color: #ddd;
+  background-color: #a89984;
+}
+
+.navigation li a:link {
+  text-decoration: none;
 }
 
 .navigation li a.selected {
@@ -89,27 +95,54 @@ table {
 
 .grumpDetail {
   display:block;
+  padding-left: 22px ;
+  text-indent: -22px ;
 }
 
 .grump {
   display: inline-block;
-  background-color: gray;
+  background-color: #83a598;
   border-style: solid;
   border-width: 0px;
   padding: 5px;
-  margin: 5px; 
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 10px; 
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.hanging-indent
+{
+  text-indent : -3em ;
+  margin-left :  3em ;
+}
+
+a:visited {
+  color: #8f3f71;
+}
+
+a:link {
+    color: #076678;
 }
 
 input {
   display: inline-block;
   width: 300px;
+  height: 50px;
+  background: #8ec07c;
+  color: #282828;
+  border: none;
+  margin: 10px;
+  font-size: 10pt;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 
 button {
   margin: 50px;
   float: auto;
+  background-color: #7c6f64;
 }
 
