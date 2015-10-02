@@ -21,6 +21,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-family: Helvetica;
   vertical-align: baseline;
   color: #282828;
 }
@@ -52,9 +53,12 @@ table {
 /******End CSS Reset *******************************/
 
 .navigation {
-  width: 100%;
+  /*width: 100%;*/
+  /*width: auto;*/
   height: 40px;
   background-color: #d5c4a1;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .navigation ul {
@@ -88,10 +92,6 @@ table {
   background-color: #ccc;
 }
 
-.fieldlabel {
-  display:inline-block;
-  width:200px;
-}
 
 .grumpDetail {
   display:block;
@@ -116,6 +116,9 @@ table {
   margin-left :  3em ;
 }
 
+h1 {
+}
+
 a:visited {
   color: #8f3f71;
 }
@@ -124,15 +127,34 @@ a:link {
     color: #076678;
 }
 
+.grumpInput {
+  margin: 20px;
+  display: block;
+}
+
+input .grumpInput {
+  display: block;
+}
+.grumpInput .fieldlabel {
+  display:inline-block;
+  width:200px;
+  display: block;
+  margin-left: 10px;
+}
+
+#grumpInputButton {
+  width: 346px;
+
+}
+
 input {
   display: inline-block;
   width: 300px;
-  height: 50px;
+  height: 35px;
   background: #8ec07c;
   color: #282828;
   border: none;
   margin: 10px;
-  font-size: 10pt;
   padding-left: 45px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -142,7 +164,9 @@ input {
 
 button {
   margin: 50px;
+  height: 35px;
   float: auto;
   background-color: #7c6f64;
+  border-radius: 5px;
 }
 
