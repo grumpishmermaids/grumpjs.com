@@ -1,24 +1,46 @@
-<div id='container' ng-controller="UploadController">
-  <form novalidate name="fileUpload">
-    <div class="grumpInput" id="grumpInputHeading">
-      <span class='fieldlabel'>Upload New Grump File</span>
-    </div>
-    <div class="grumpInput">
-      <span class='fieldlabel'>Github repo</span>
-      <input type='repo' class='textbox' ng-model ="doc.repo" placeholder="Currently we support public repositories only" required>
-    </div>
+<div class="container">
+  <div id='container' ng-controller="UploadController">
+    <div class="container">
 
-    <div class="grumpInput">
-      <span class='fieldlabel'>Run File</span>
-      <input input='text' ng-model ="doc.runFile" placeholder="runMeOnCommand.js (currently must be in your root directory)" required>
-    </div>
-    
-    <div class="grumpInput">
-      <span class='fieldlabel'>Command Name</span> 
-      <input class='taskinput' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.command" placeholder="this is what will be invoked in grump" required>
-    </div>
-    
-    <button class="grumpInput" id="grumpInputButton " type="submit" ng-click="submitForm(doc)" >Grump it</button>
-  
-  </form>
+      <form class="form-horizontal" role="form" novalidate name="fileUpload">
+
+        <div class="form-group grumpInput" id="grumpInputHeading">
+          <label class="control-label col-sm-2">UploadNew New Grump</label>
+          <!-- <span class='fieldlabel'>Upload New Grump File</span> -->
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for='urlInput'>
+            Github repo
+          </label>
+          <!-- <span class='fieldlabel'>Github repo</span> -->
+          <!-- <input type='repo' class='textbox' ng-model ="doc.repo" placeholder="Currently we support public repositories only" required> -->
+          <input type='url' class="textbox form-control" ng-model ="doc.repo" placeholder="Currently we support public repositories only" id='urlInput' required>
+        </div>
+
+        <div class="form-group">
+          <!-- <span class='fieldlabel'>Run File</span> -->
+          <label class="control-label col-sm-2" for="jsFile">
+            Run File
+          </label>
+          <input type='text' input='text' class='form-control' ng-model ="doc.runFile" placeholder="runMeOnCommand.js (currently must be in your root directory)" id='jsFile' required>
+        </div>
+        
+        <div class="form-group">
+          <!-- <span class='fieldlabel'>Grump Name</span>  -->
+          <label class="control-label col-sm-2" for="grumpName">
+            Grump Name
+          </label>
+          <input class='taskinput form-control' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.command" placeholder="this is what will be invoked in grump" id='grumpName' required>
+        </div>
+
+        <div class='form-group'>
+          <div class='col-sm-offset-2 col-sm-10'>
+            <button type="submit" class="grumpInput btn btn-default" id="grumpInputButton" ng-click="submitForm(doc)" >Grump it</button>
+          </div>
+        </div> 
+
+      </form>
+    </div>  
+  </div>
 </div>
