@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html ng-app='grump'>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Grump - The Script Loader Extroadinare</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles/styles.css" /> -->
+    <!-- <link rel="stylesheet" href="styles/bootstrap.css"> -->
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap_cover_template.css">
     <link rel="icon" type="image/png" href="images/favicon" />
   </head>
   
@@ -29,8 +34,10 @@
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+    <script src="assets/bower_components/angular/angular.min.js"></script>
+    <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
 
     <script src="app/services/services.js"></script>
     <script src="app/upload/upload.js"></script>

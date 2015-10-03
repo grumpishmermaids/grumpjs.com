@@ -13,10 +13,10 @@
     "specs",
     "spec"
   ],
-
-   "dependencies": {
+  "dependencies": {
     "angular": "*",
     "angular-route": "*",
-    "angular-mocks": "*"
+    "angular-mocks": "*",
+    "bootstrap": "~3.3.5"
   }
 }
