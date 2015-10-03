@@ -13,38 +13,51 @@
   </head>
   
   <body>
-    <h1>Grump</h1>
-    <nav class="navigation">
-      <ul>
-        <li>
-          <a href='#/browse' class='link'>Browse</a>
-        </li>
-        <li>
-          <a href='#/upload' class='link'>Upload</a>
-        </li>
-        <li>
-          <a href='#/signin' class='link'>Signin</a>
-        </li> 
-        <li>
-          <a href='#/mygrumps' class='link'>My Grumps</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Grump</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li>
+                    <a href='#/browse' class='link'>Browse</a>
+                  </li>
+                  <li>
+                    <a href='#/upload' class='link'>Upload</a>
+                  </li>
+                  <li>
+                    <a href='#/signin' class='link'>Signin</a>
+                  </li> 
+                  <li>
+                    <a href='#/mygrumps' class='link'>My Grumps</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <nav class="navigation">
+          </nav>
+          <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+          <div ng-view></div>
 
-    <script src="assets/bower_components/angular/angular.min.js"></script>
-    <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+        </div>  
+      </div>
+    </div>
 
-    <script src="app/services/services.js"></script>
-    <script src="app/upload/upload.js"></script>
-    <script src="app/browse/browse.js"></script>
-    <script src="app/myGrumps/myGrumps.js"></script>
-    <script src="app/auth/auth.js"></script>
-    <script src="app/token/token.js"></script>
-    <script src="app/app.js"></script>
+      <script src="assets/bower_components/angular/angular.min.js"></script>
+      <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+      <script src="assets/bower_components/jquery/dist/jquery.min.js" type="text/javascript" ></script>
+      <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+
+      <script src="app/services/services.js"></script>
+      <script src="app/upload/upload.js"></script>
+      <script src="app/browse/browse.js"></script>
+      <script src="app/myGrumps/myGrumps.js"></script>
+      <script src="app/auth/auth.js"></script>
+      <script src="app/token/token.js"></script>
+      <script src="app/app.js"></script>
   </body>
 </html>
