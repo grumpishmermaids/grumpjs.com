@@ -2,21 +2,26 @@
   <h1>Upload New Grump File</h1>
   <form novalidate name="fileUpload">
     <div>
-      <span class='fieldlabel'>Github repo</span>
-      <input type='repo' class='textbox' ng-model ="doc.repo" placeholder="Currently we support public repositories only" required>
+      <span class='fieldlabel'>Github Repo</span>
+      <input type='repo' class='textbox' ng-model ="doc.repo" placeholder="Public repos only. Don't forget your grump.json!" required>
+    </div>
+
+    <!-- <div>
+      <span class='fieldlabel'>Run File</span>
+      <input input='text' ng-model ="doc.runFile" placeholder="runMeOnCommand.js (currently must be in your root directory)" required>
+    </div> -->
+    
+    <div>
+      <span class='fieldlabel'>Grump Command Name</span> 
+      <input class='taskinput' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.defaultCommand" placeholder="Command to be invoked in grump." required>
     </div>
 
     <div>
-      <span class='fieldlabel'>Run File</span>
-      <input input='text' ng-model ="doc.runFile" placeholder="runMeOnCommand.js (currently must be in your root directory)" required>
+      <span class='fieldlabel'>Description</span> 
+      <input class='textbox' type='text' ng-model="doc.description" placeholder="Describe your grump." required>
     </div>
     
-    <div>
-      <span class='fieldlabel'>Command Name</span> 
-      <input class='taskinput' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.command" placeholder="this is what will be invoked in grump" required>
-    </div>
-    
-    <input type="submit" ng-click="submitForm(doc)" value="To The Grump Mobile" />
+    <input type="submit" ng-click="submitForm(doc)" value="Upload My Grump" />
   
   </form>
 </div>

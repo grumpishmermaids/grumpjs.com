@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
       if(err) { 
         throw err; 
       } else {
-        var grumps = Package.find({ 'owner.login' : user.login }, function (err, result) {
+        var grumps = Package.find({ 'author' : user.login }, function (err, result) {
           res.send(result);
         });
       }
@@ -25,31 +25,31 @@ router.get('/', function(req, res, next) {
   }
 });
 
-//updates package
+//updates package  --TODO: offer meaningful updates?
 router.put('/', function(req, res, next) {
   var token = req.headers['x-access-token'];
   var grumpID = req.body.grumpID;
 
-  if( token === undefined) { 
+  if (token === undefined) { 
     res.send("You are not signed in"); 
   } else {
     User.findOne({token:token}, function (err, user) {
-      if(err) { throw err; }
+      if (err) { throw err; }
 
       //making sure that this person can actually update this package
-      Package.findOne({_id: grumpID, 'owner.login' : user.login }, function (err, pack) {
-        if(err) { throw err; 
-        } else if(pack === undefined) {
+      Package.findOne({_id: grumpID, 'author' : user.login }, function (err, pack) {
+        if (err) { throw err; }
+        else if (pack === undefined) {
           res.send("you dont have access to update this package stop trolling");
         } else {
           //remove the old package
           Package.findOne({_id: grumpID}).remove(function(err) {
             if(err) { throw err; }
             //now create a new record for the package
-            utils.gitGet([pack.owner.login, pack.repoName], function(info){
+            utils.gitGet([pack.author, pack.repoName], function(err, info) {
               //bundle git response + frontend data
-              info.runFile = pack.runFile;
-              info.command = pack.command;
+              // info.runFile = pack.runFile;
+              // info.command = pack.command;
               // post to mongo
               var newPack = new Package(info);
               newPack.save(function (err) {
@@ -72,20 +72,20 @@ router.delete('/', function(req, res, next) {
   var token = req.headers['x-access-token'];
   var grumpID = req.body.grumpID;
 
-  if( token === undefined) { 
+  if (token === undefined) { 
     res.send("You are not signed in"); 
   } else {
     User.findOne({token:token}, function (err, user) {
-      if(err) { throw err; }
+      if (err) { throw err; }
       //making sure that this person can actually update this package
-      Package.findOne({_id: grumpID, 'owner.login' : user.login }, function (err, pack) {
-        if(err) { throw err; 
-        } else if(pack === undefined) {
+      Package.findOne({_id: grumpID, 'author' : user.login }, function (err, pack) {
+        if (err) { throw err; }
+        else if (pack === undefined) {
           res.send("you dont have access to update this package stop trolling");
         } else {
           //then junking it
           Package.findOne({_id: grumpID}).remove(function(err, pack) {
-            if(err) { throw err; }
+            if (err) { throw err; }
             res.sendStatus(200); 
           });
         }
