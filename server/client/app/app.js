@@ -5,10 +5,15 @@ angular.module('grump', [
   'grump.myGrumps',
   'grump.auth',
   'grump.token',
-  'ngRoute'
+  'ngRoute',
+  'ngSanitize',
+  'btford.markdown'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/gettingStarted', {
+      templateUrl: 'app/gettingStarted/gettingStarted.html'
+    })
     .when('/browse', {
       templateUrl: 'app/browse/browse.html',
       controller: 'BrowseController'
