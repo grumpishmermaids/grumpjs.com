@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
         var grumps = Package.find({ 'author' : user.login }, function (err, result) {
           res.send(result);
         });
-      } else res.send("you dont have any grumps to your name");
+      }
     });
   }
 });
@@ -49,10 +49,12 @@ router.put('/', function(req, res, next) {
             if(err) { throw err; }
             //now create a new record for the package
             utils.gitGet([pack.author, pack.repoName], function(err, info) {
-              //bundle git response + frontend data
-              // info.runFile = pack.runFile;
-              // info.command = pack.command;
-              // post to mongo
+              console.log("-------------------------------------------",pack);
+              //keeps the original data attached to the grump
+              info.defaultCommand = pack.defaultCommand;
+              //defaults to previous description, unless github has one
+              if(pack.description !== undefined) { info.description = pack.description; } 
+
               var newPack = new Package(info);
               newPack.save(function (err) {
                 if (err) { 
