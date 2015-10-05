@@ -9,8 +9,9 @@
 html,
 body {
     height: 100%;
-    background-color: #fbf1c7;
+    background-color: #3c3836;
     /*font-size: 62.5%;*/
+    color: #ebdbb2;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 body a {
-    color: #427b58;
+    color: #ebdbb2;
 }
 
 body a:hover,
@@ -31,41 +32,45 @@ body a:focus {
 
 /*Navbar brand (on left side)*/
 .navbar-inverse{
-  color: #689d6a;
-  background-color: #3c3836;
+  color: #ebdbb2;
+  background-color: #504945;
+  border: none;
+  /*border-color: #af3a03;*/
 }
 
 .navbar-inverse .navbar-brand {
-  color: #689d6a;
+  color: #ebdbb2;
   font-size: 22pt;
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #689d6a;
+  color: #ebdbb2;
   background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > li > a{
-  color: #689d6a;
+  color: #ebdbb2;
   font-size: 14pt;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #8ec07c;
+  color: #d65d0e;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #689d6a;
+  color: #d65d0e;
 }
 
 .grump > .panel {
   min-height: 4em;
-  border-color: #fe8019;
+  /*border-color: #af3a03;*/
+  border-color: #3c3836;
   border-width: 1px;
+  background-color: #504945;
 }
 
 .grumpDetail {
@@ -73,6 +78,20 @@ body a:focus {
   padding-left: 6em;
   text-indent: -6em;
   font-size: 14pt;
+}
+
+#grumpName {
+  /*color: #458588;*/
+  /*color: #076678;*/
+  color: #458588;
+}
+
+.icon-bar {
+  color: #ebdbb2;
+}
+
+#grumpOwner {
+  color: #689d6a;
 }
 
 #signinForm {
@@ -99,13 +118,13 @@ body a:focus {
 }
 
 .panel {
-  background-color: #ebdbb2;
+  background-color: #ffffff;
   padding: 0.5em;
 }
 
 .form-control {
-  background-color: #ebdbb2;
-  border-color: #fe8019;
+  background-color: #504945;
+  border-color: #3c3836 ;
   border-width: 1px;
 }
 
