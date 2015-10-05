@@ -1,7 +1,13 @@
 <div id='container' ng-controller="AuthController">
-  <form name="signingForm" ng-submit="initiateSignin()">
-    <button ng-click="login()">
-      Signin using GitHub
-    <button>
-  </form>
+  <div class="container">
+    <form class='form-horizontal' role='form' name="signingForm" ng-submit="initiateSignin()">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type='submit' class="btn btn-default" ng-click="login()">
+            Signin using GitHub
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

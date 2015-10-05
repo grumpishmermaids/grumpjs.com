@@ -17,10 +17,6 @@ angular.module('grump', [
       templateUrl: 'app/upload/upload.html',
       controller: 'UploadController'
     })
-    .when('/login', {
-      templateUrl: 'app/login/login.html',
-      controller: 'LoginController'
-    })
     .when('/signin', {
       templateUrl: 'app/auth/auth.html',
       controller: 'AuthController'
