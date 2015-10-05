@@ -8,9 +8,9 @@
 </div>
 
 <div ng-controller="BrowseController" ng-init="getGrumps()" >
-  <div class="container">
+  <div class="container col-centered">
     <div class="row">
-      <div class="col-md-4 col-sm-6 col-lg-4 grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
+      <div class="col-lg-12 col-centered grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
         <div class="panel panel-default text-left">
             <span class="grumpDetail" id="name"><b>Grump Name</b>: {{grump.defaultCommand}}</span>
             <span class="grumpDetail" id="owner"><b>Author</b>: {{grump.author}}</span>
