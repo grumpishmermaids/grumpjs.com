@@ -68,9 +68,11 @@ body {
 }*/
 
 .container {
-  
 }
 
+#signinForm {
+  margin: 20px;
+}
 
 #grumpSearchContainer{
   /*margin: 5px;*/
