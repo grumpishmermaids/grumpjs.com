@@ -13,14 +13,15 @@ router.get('/', function(req, res, next) {
   if( token === undefined) { 
     res.send("You are not signed in"); 
   } else {
+
     User.findOne({token:token}, function (err, user) {
       if(err) { 
         throw err; 
-      } else {
+      } else if(user !== null) {
         var grumps = Package.find({ 'author' : user.login }, function (err, result) {
           res.send(result);
         });
-      }
+      } else res.send("you dont have any grumps to your name");
     });
   }
 });
@@ -37,6 +38,7 @@ router.put('/', function(req, res, next) {
       if (err) { throw err; }
 
       //making sure that this person can actually update this package
+
       Package.findOne({_id: grumpID, 'author' : user.login }, function (err, pack) {
         if (err) { throw err; }
         else if (pack === undefined) {

@@ -1,12 +1,14 @@
 angular.module('grump.myGrumps', [])
 
-.controller('MyGrumpsController', function ($scope, MyGrumps) {
+.controller('MyGrumpsController', function ($scope, MyGrumps, $window) {
   $scope.grumps = [];
 
   $scope.getMyGrumps = function(){
     return MyGrumps.getMyGrumps().then(function (results) {
+      if(typeof results.data == 'string'){
+        $window.location.href = '/api/mygrumps';
+      }
       $scope.grumps = results.data;
-
       //returning scope.grumps for testing...
       return $scope.grumps;
     });
