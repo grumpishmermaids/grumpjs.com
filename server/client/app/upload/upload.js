@@ -1,6 +1,6 @@
 angular.module('grump.upload', [])
 
-.controller('UploadController', function ($scope, Files) {
+.controller('UploadController', function ($scope, Files, $location) {
   $scope.doc = {
     repo : null,
     defaultCommand : null,
@@ -15,6 +15,8 @@ angular.module('grump.upload', [])
         $scope.doc.defaultCommand = null;
         $scope.doc.description = null;
         console.log(JSON.stringify(result));
+        $location.url('/browse');
+
       })
       .catch(function (error) {   //TODO: notify user of error
         console.log(error);
