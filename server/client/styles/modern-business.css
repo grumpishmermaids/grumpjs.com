@@ -61,9 +61,10 @@ body a:focus {
   color: #689d6a;
 }
 
-
 .grump > .panel {
   height: 10em;
+  border-color: #fe8019;
+  border-width: 1px;
 }
 
 .grumpDetail {
@@ -78,6 +79,8 @@ body a:focus {
 }
 
 #grumpSearchContainer > .form-horizontal > .control-label {
+  /*border-color: #d65d0e;*/
+  /*border-width: 3px;*/
   font-size: 20px;
 }
 
@@ -101,10 +104,12 @@ body a:focus {
 
 .form-control {
   background-color: #ebdbb2;
+  border-color: #fe8019;
+  border-width: 1px;
 }
 
 .btn-default {
-  background-color: #ebdbb2;
+  background-color: #bdae93;
 }
 .img-portfolio {
     margin-bottom: 30px;
