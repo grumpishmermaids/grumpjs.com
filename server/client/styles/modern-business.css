@@ -36,8 +36,13 @@ body {
   background-color: transparent;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li > a{
   color: #689d6a;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #8ec07c;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -61,9 +66,17 @@ body {
 .navbar-inverse .navbar-brand {
   color: #689d6a;
 }*/
+#grumpSearchContainer{
+  /*margin: 5px;*/
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
 
+.col-centered {
+}
 
-.well {
+.panel {
   background-color: #ebdbb2;
 }
 
@@ -107,8 +120,8 @@ body {
     font-style: italic;
 }
 
-.grumps .container {
-    /*margin: 20px;*/
+#grumpsSearchContainer {
+    margin: 5px;
 }
 
 /* Footer Styles */
