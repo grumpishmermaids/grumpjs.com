@@ -1,23 +1,11 @@
 var mongoose = require('../helpers/db.js');
 
 var packageSchema = new mongoose.Schema({
-  githubID : Number,
-  repoName : String,
-  runFile : String,
-  command : String,
-  description : String,
-  url : String,
+  repoName: String, 
+  author: String,           // unique (based on github handle)
+  defaultCommand: String,   // not necessarily unique (conflict resolution refers to authors)
   cloneUrl : String,
-  created_at : Date,
-  updated_at : Date,
-  pushed_at : Date,
-  owner : {
-    id : Number,
-    login : String,
-    avatar : String,
-    url : String,
-    kind : String
-  }
+  description: String
 });
 
 var Package = mongoose.model('Package', packageSchema);

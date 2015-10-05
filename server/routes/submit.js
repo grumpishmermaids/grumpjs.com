@@ -8,23 +8,34 @@ var Package   = require('../models/Package');
 
 // Submitting a package into Grump Library
 router.post('/', function(req, res, next) {
-  var repo = url.parse(req.body.repo).path.slice(1).split('/');
-  utils.gitGet(repo, function(info){
-    
+  
+  // user-friendly input parsing: pull github user/reponame (for github API call) out of a variety of reasonable formats
+  var repo = url.parse(req.body.repo).path.split('/');  //ok with/without https
+  if (repo.length > 2) { //ok with/without github.com domain
+    repo.shift();
+  }
+  if (repo[1].slice(-4) === ".git") {  //ok with/without .git ending
+    repo[1] = repo[1].slice(0,-4);
+  }
 
-    //bundle git response + frontend data
-    info.runFile = req.body.runFile;
-    info.command = req.body.command;
+  utils.gitGet(repo, function(err, info){
+    if (err) {
+      res.sendStatus(500);   //TODO: catch this on frontend (is 500 right num?)
+    } else {
+      //bundle git response + frontend data
+      info.defaultCommand = req.body.defaultCommand;
+      info.description = req.body.description;  
 
-    // post to mongo
-    var pack = new Package(info);
-    pack.save(function (err) {
-      if (err) { 
-        res.sendStatus(500);
-      } else {
-        res.sendStatus(200);
-      }
-    });
+      // post to mongo
+      var pack = new Package(info);
+      pack.save(function (err) {
+        if (err) { 
+          res.sendStatus(500);
+        } else {
+          res.sendStatus(200);
+        }
+      });
+    }
   });
 });
 
