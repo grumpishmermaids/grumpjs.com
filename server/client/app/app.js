@@ -5,6 +5,7 @@ angular.module('grump', [
   'grump.myGrumps',
   'grump.auth',
   'grump.token',
+  'grump.errorPage',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -28,6 +29,10 @@ angular.module('grump', [
     .when('/mygrumps', {
       templateUrl: 'app/myGrumps/myGrumps.html',
       controller: "MyGrumpsController"
+    })
+    .when('/errorpage/:error?', {
+      templateUrl: 'app/errorPage/errorpage.html',
+      controller: "ErrorPageController"
     })
     .otherwise({
         redirectTo : '/browse'
