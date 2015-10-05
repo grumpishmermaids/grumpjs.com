@@ -1,6 +1,6 @@
 <div id='container' ng-controller="MyGrumpsController" ng-init="getMyGrumps()">
 
-<div class="grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
+<div class="grump" ng-repeat="grump in grumps orderBy:'command' | filter:searchText">
     <span class="name">Command: {{grump.defaultCommand}}</span>
     <span class="owner">Author: {{grump.author}}</span>
     <span class="repo">Repo: {{grump.repoName}}</span>
