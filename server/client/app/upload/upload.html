@@ -5,34 +5,34 @@
       <form class="form-horizontal" role="form" novalidate name="fileUpload">
 
         <div class="form-group grumpInput" id="grumpInputHeading">
-          <label class="control-label col-sm-2">UploadNew New Grump</label>
+          <label class="control-label col-sm-2">Upload New Grump</label>
           <!-- <span class='fieldlabel'>Upload New Grump File</span> -->
         </div>
 
         <div class="form-group">
           <label class="control-label col-sm-2" for='urlInput'>
-            Github repo
+            Github Repo
           </label>
           <!-- <span class='fieldlabel'>Github repo</span> -->
           <!-- <input type='repo' class='textbox' ng-model ="doc.repo" placeholder="Currently we support public repositories only" required> -->
-          <input type='url' class="textbox form-control" ng-model ="doc.repo" placeholder="Currently we support public repositories only" id='urlInput' required>
+          <input class="textbox form-control" ng-model="doc.repo" placeholder="Public repos only. Don't forget your grump.json!" id='urlInput' required>
+        </div>
+
+        <div class="form-group">
+          <!-- <span class='fieldlabel'>Grump Name</span>  -->
+          <label class="control-label col-sm-2" for="grumpName">
+            Grump Command Name
+          </label>
+          <input class='taskinput form-control' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.defaultCommand" placeholder="Command to be invoked in grump." id='grumpName' required>
         </div>
 
         <div class="form-group">
           <!-- <span class='fieldlabel'>Run File</span> -->
           <label class="control-label col-sm-2" for="jsFile">
-            Run File
+            Description
           </label>
-          <input type='text' input='text' class='form-control' ng-model ="doc.runFile" placeholder="runMeOnCommand.js (currently must be in your root directory)" id='jsFile' required>
-        </div>
-        
-        <div class="form-group">
-          <!-- <span class='fieldlabel'>Grump Name</span>  -->
-          <label class="control-label col-sm-2" for="grumpName">
-            Grump Name
-          </label>
-          <input class='taskinput form-control' type='text' ng-pattern='/^[a-zA-Z0-9]*$/' ng-model="doc.command" placeholder="this is what will be invoked in grump" id='grumpName' required>
-        </div>
+          <input type='text' input='text' class='form-control' ng-model ="doc.description" placeholder="Describe your grump" id='jsFile' required>
+        </div>        
 
         <div class='form-group'>
           <div class='col-sm-offset-2 col-sm-10'>
@@ -43,4 +43,3 @@
       </form>
     </div>  
   </div>
-</div>

@@ -16,8 +16,9 @@ angular.module('grump.services', [])
     return $http({
       method: 'GET',
       url: 'api/lib'
-    }).then(function (resp) {
-      return resp;
+    })
+    .then(function (resp) {
+      return resp.data.grumps;
     });
   };
 

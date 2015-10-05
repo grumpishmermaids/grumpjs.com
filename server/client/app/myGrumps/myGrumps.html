@@ -1,10 +1,10 @@
 <div id='container' ng-controller="MyGrumpsController" ng-init="getMyGrumps()">
 
 <div class="grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
-    <span class="name">{{grump.command}}</span>
-    <span class="owner">{{grump.owner.login}}</span>
-    <span class="description">{{grump.description}}</span>
-    <span class="repo"> <a ng-href="{{grump.url}}">repo</a></span>
+    <span class="name">Command: {{grump.defaultCommand}}</span>
+    <span class="owner">Author: {{grump.author}}</span>
+    <span class="repo">Repo: {{grump.repoName}}</span>
+    <span class="description">Description: {{grump.description}}</span>
     <button class="update" ng-click="updateGrump(grump._id)">Update</button>
     <button class="delete" ng-click="deleteGrump(grump._id)">Delete</button>
  </div>

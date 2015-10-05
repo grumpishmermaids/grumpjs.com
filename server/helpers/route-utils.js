@@ -12,66 +12,42 @@ var github = new GitHubApi({
     }
 });
 
-  github.authenticate({
-      type: "oauth",
-      key: "61c332d3744979e21dfc",
-      secret: process.env.GRUMP_GITHUB_API_SECRET
-  });
+github.authenticate({
+    type: "oauth",
+    key: "61c332d3744979e21dfc",
+    secret: process.env.GRUMP_GITHUB_API_SECRET
+});
 
 var gitGet = function(repo, callback) {
-  var info = {};
-  // Get Repo data
+  // github API expects {user: "username", repo: "reponame"} and a callback
   github.repos.get({
     user: repo[0],
     repo: repo[1],
   }, function(err, res) {
-    if (err) console.log('Error calling github in gitGet',err);
-    info.githubID = res.id;
-    info.repoName = res.name;
-    info.description = res.description;
-    info.apiUrl = res.url;
-    info.cloneUrl = res.clone_url;
-    info.created_at = res.created_at;
-    info.updated_at = res.updated_at;
-    info.pushed_at = res.pushed_at;
-    info.owner = {};
-    info.owner.id = res.owner.id;
-    info.owner.login = res.owner.login;
-    info.owner.avatar = res.owner.avatar_url;
-    info.owner.url = res.owner.url;
-    info.owner.kind = res.owner.type;
-
-    // Fetch latest commit data
-    github.repos.getCommits({
-      user: repo[0],
-      repo: repo[1],
-      page: 1,
-      per_page: 1
-    }, function(err, res) {
-      info.last_commit = res[0].sha;
-      info.download = "https://github.com/" + repo[0] + "/" + repo[1] + "/archive/" + info.last_commit + ".zip";
-
-      callback(info);
-    });
+    if (err) {
+      console.log('Error calling github in gitGet', err);
+      callback(err, null);
+    } else {
+      // success: send back basic data to be recorded in server db
+      var info = {
+        author: res.owner.login,
+        repoName: res.name,
+        cloneUrl: res.clone_url
+      };
+      callback(null, info);
+    }
   });
 };
-
 
 gitGetUser = function(token, callback) {
   var options = {
     url: "https://api.github.com/user?access_token="+token,
-    headers: {
-      'User-Agent': 'Grump'
-    }
-
+    headers: { 'User-Agent': 'Grump' }
   };
-
   request.get(options, function(err, res){
     callback(JSON.parse(res.body));
   });
-
 };
-
 
 
 exports.gitGet = gitGet;
