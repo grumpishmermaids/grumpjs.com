@@ -9,12 +9,71 @@
 html,
 body {
     height: 100%;
+    background-color: #fbf1c7;
 }
 
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+/*Navbar*/
+.navbar {
+}
+
+/*Navbar brand (on left side)*/
+.navbar-inverse{
+  color: #689d6a;
+    background-color: #3c3836;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #689d6a;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #689d6a;
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #689d6a;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #689d6a;
+}
+
+/*#letsGetGrumpy {
+  color: #689d6a;
+}*/
+
+/*#grumpBrowseLinks {
+  color: #689d6a;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #689d6a;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #689d6a;
+}*/
+
+
+.well {
+  background-color: #ebdbb2;
+}
+
+.form-control {
+  background-color: #ebdbb2;
+}
+
+.btn-default {
+  background-color: #ebdbb2;
+}
 .img-portfolio {
     margin-bottom: 30px;
 }
