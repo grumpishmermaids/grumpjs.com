@@ -37,6 +37,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right" id="grumpBrowseLinks">
                     <li>
+                        <a href='#/gettingStarted' class='link'>Getting Started</a>
+                    </li>
+                    <li>
                         <a href='#/browse' class='link'>Browse</a>
                     </li>
                     <li>
@@ -59,19 +62,24 @@
 
     <div ng-view></div>
 
+    <!-- Dependencies -->
     <script src="assets/bower_components/angular/angular.min.js"></script>
-      <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
-      <script src="assets/bower_components/jquery/dist/jquery.min.js" type="text/javascript" ></script>
-      <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+    <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="assets/bower_components/jquery/dist/jquery.min.js" type="text/javascript" ></script>
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>  
+    <script src="assets/bower_components/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="assets/bower_components/showdown/compressed/Showdown.min.js" type="text/javascript"></script>
+    <script src="assets/bower_components/angular-markdown-directive/markdown.js" type="text/javascript"></script>
 
-      <script src="app/services/services.js"></script>
-      <script src="app/upload/upload.js"></script>
-      <script src="app/browse/browse.js"></script>
-      <script src="app/myGrumps/myGrumps.js"></script>
-      <script src="app/auth/auth.js"></script>
-      <script src="app/token/token.js"></script>
-      <script src="app/errorPage/errorpage.js"></script>
-      <script src="app/app.js"></script>
+    <!-- App files -->
+    <script src="app/services/services.js"></script>
+    <script src="app/upload/upload.js"></script>
+    <script src="app/browse/browse.js"></script>
+    <script src="app/myGrumps/myGrumps.js"></script>
+    <script src="app/auth/auth.js"></script>
+    <script src="app/token/token.js"></script>
+    <script src="app/errorPage/errorpage.js"></script>
+    <script src="app/app.js"></script>
 
 </body>
 
