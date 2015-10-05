@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container col-lg-12 col-centered" id="grumpSearchContainer">
   <form class='form-horizontal' role='form' name="searchForm">
-    <label class="control-label col-sm-4" for="grumpSearchBox">
+    <label class="control-label " for="grumpSearchBox">
       Search Grumps
     </label>
     <input type='text' input='text' class='form-control grumpSearch' id="grumpSearchBox" placeholder="Search..." ng-model='searchText'>
@@ -10,16 +10,14 @@
 <div ng-controller="BrowseController" ng-init="getGrumps()" >
   <div class="container">
     <div class="row">
-      <div class="panel panel-default text-center">
+      <div class="col-md-3 col-sm-6 grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
+        <div class="panel panel-default text-center">
+          <span class="grumpDetail" id="name">name: {{grump.command}}</span>
+          <span class="grumpDetail" id="owner">owner: {{grump.owner.login}}</span>
+          <span class="grumpDetail" id="description">description: {{grump.description}}</span>
+          <span class="grumpDetail" id="repo">repos:<a ng-href="{{grump.url}}">repo</a></span>
+        </div>
 
-        <fieldset class="col-md-3 col-sm-6 grump" ng-repeat="grump in grumps | orderBy:'command' | filter:searchText">
-          <div class='well'>
-            <p class="grumpDetail" id="name">Grump Name: {{grump.defaultCommand}}</p>
-            <p class="grumpDetail" id="owner">Author: {{grump.author}}</p>
-            <p class="grumpDetail" id="description">Description: {{grump.description}}</p>
-            <p class="grumpDetail" id="repo">Repo: <a ng-href="{{grump.cloneUrl}}">{{grump.repoName}}</a></p>
-          </div> 
-        </fieldset>
       </div>
     </div>
   </div>
