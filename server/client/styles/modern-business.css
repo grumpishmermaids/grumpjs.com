@@ -66,6 +66,12 @@ body {
 .navbar-inverse .navbar-brand {
   color: #689d6a;
 }*/
+
+.container {
+  
+}
+
+
 #grumpSearchContainer{
   /*margin: 5px;*/
     float: none;
@@ -73,7 +79,9 @@ body {
     margin-bottom: 10px;
 }
 
-.col-centered {
+
+.control-label {
+  padding: 0px;
 }
 
 .panel {
