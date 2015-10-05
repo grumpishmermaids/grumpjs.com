@@ -11,13 +11,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6 grump" ng-repeat="grump in grumps  | orderBy:'command' | filter:searchText">
-        <div class="panel panel-default text-center">
-          <span class="grumpDetail" id="name">name: {{grump.command}}</span>
-          <span class="grumpDetail" id="owner">owner: {{grump.owner.login}}</span>
-          <span class="grumpDetail" id="description">description: {{grump.description}}</span>
-          <span class="grumpDetail" id="repo">repos:<a ng-href="{{grump.url}}">repo</a></span>
+        <div class="panel panel-default text-left">
+            <span class="grumpDetail" id="name"><b>Grump Name</b>: {{grump.defaultCommand}}</span>
+            <span class="grumpDetail" id="owner"><b>Author</b>: {{grump.author}}</span>
+            <span class="grumpDetail" id="description"><b>Description</b>: {{grump.description}}</span>
+          <span class="grumpDetail" id="repo"><b>Repo</b>: <a ng-href="{{grump.cloneUrl}}">{{grump.repoName}}</a></span>
         </div>
-
       </div>
     </div>
   </div>

@@ -67,7 +67,10 @@ body {
   color: #689d6a;
 }*/
 
-.container {
+.grumpDetail {
+  display:block;
+  padding-left: 22px ;
+  text-indent: -22px ;
 }
 
 #signinForm {
