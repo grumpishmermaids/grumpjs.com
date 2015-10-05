@@ -8,7 +8,7 @@ angular.module('grump.myGrumps', [])
       if(typeof results.data == 'string'){
         $location.url('/errorpage/?error=' + results.data);
       
-      } else if (results.data.length) {
+      } else if (results.data.length === 0) {
         $location.url('/errorpage/?error=' + "you dont have any grumps to your name");
 
       }
