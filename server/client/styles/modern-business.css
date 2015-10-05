@@ -10,6 +10,7 @@ html,
 body {
     height: 100%;
     background-color: #fbf1c7;
+    /*font-size: 62.5%;*/
 }
 
 body {
@@ -27,17 +28,16 @@ body a:focus {
 
 
 /*Navbar*/
-.navbar {
-}
 
 /*Navbar brand (on left side)*/
 .navbar-inverse{
   color: #689d6a;
-    background-color: #3c3836;
+  background-color: #3c3836;
 }
 
 .navbar-inverse .navbar-brand {
   color: #689d6a;
+  font-size: 22pt;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -48,6 +48,7 @@ body a:focus {
 
 .navbar-inverse .navbar-nav > li > a{
   color: #689d6a;
+  font-size: 14pt;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -62,34 +63,34 @@ body a:focus {
 }
 
 .grump > .panel {
-  height: 10em;
+  min-height: 4em;
   border-color: #fe8019;
   border-width: 1px;
 }
 
 .grumpDetail {
   display:block;
-  padding-left: 22px ;
-  text-indent: -22px ;
-  font-size: 16px;
+  padding-left: 6em;
+  text-indent: -6em;
+  font-size: 14pt;
 }
 
 #signinForm {
-  margin: 20px;
+  margin: 5em;
 }
 
 #grumpSearchContainer > .form-horizontal > .control-label {
   /*border-color: #d65d0e;*/
   /*border-width: 3px;*/
-  font-size: 20px;
+  font-size: 16pt;
 }
 
 #grumpSearchContainer{
   /*margin: 5px;*/
     float: none;
     margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    margin-bottom: 24pt;
+    margin-top: 24pt;
 }
 
 
@@ -122,21 +123,21 @@ body a:focus {
 /* 404 Page Styles */
 
 .error-404 {
-    font-size: 100px;
+    /*font-size: 100px;*/
 }
 
 /* Pricing Page Styles */
 
 .price {
     display: block;
-    font-size: 50px;
+    /*font-size: 50px;*/
     line-height: 50px;
 }
 
 .price sup {
     top: -20px;
     left: 2px;
-    font-size: 20px;
+    /*font-size: 20px;*/
 }
 
 .period {
