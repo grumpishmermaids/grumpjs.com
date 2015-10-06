@@ -16,8 +16,8 @@
             <span class="grumpDetail" id="owner"><b>Author</b>: {{grump.author}}</span>
             <span class="grumpDetail" id="description"><b>Description</b>: {{grump.description}}</span>
           <span class="grumpDetail" id="repo"><b>Repo</b>: <a ng-href="{{grump.cloneUrl}}">{{grump.repoName}}</a></span>
-          <button class="update" ng-click="updateGrump(grump._id)">Update</button>
-          <button class="delete" ng-click="deleteGrump(grump._id)">Delete</button>
+          <button class="update btn btn-default" ng-click="updateGrump(grump._id)">Update</button>
+          <button class="delete btn btn-default" ng-click="deleteGrump(grump._id)">Delete</button>
         </div>
       </div>
     </div>

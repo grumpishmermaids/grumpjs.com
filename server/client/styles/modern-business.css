@@ -126,6 +126,7 @@ body a:focus {
   background-color: #504945;
   border-color: #3c3836 ;
   border-width: 1px;
+  color: #ebdbb2;
 }
 
 .btn-default {
