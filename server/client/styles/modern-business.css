@@ -86,8 +86,8 @@ body a:focus {
   color: #458588;
 }
 
-.icon-bar {
-  color: #ebdbb2;
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ebdbb2;
 }
 
 #grumpOwner {
@@ -131,7 +131,15 @@ body a:focus {
 
 .btn-default {
   background-color: #bdae93;
+  border-style: none;
 }
+
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #a89984;
+  border-style: none;
+}
+
 .img-portfolio {
     margin-bottom: 30px;
 }
